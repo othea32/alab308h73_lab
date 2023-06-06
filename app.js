@@ -117,3 +117,40 @@ for (let i = 0; i < 2; i++) {
 console.log(timmy);
 
 
+// Chefs Make Dinners
+class Dinner {
+ constructor(appetizer, entree, dessert) {
+  this.appetizer = appetizer;
+  this.entree = entree;
+  this._dessert = dessert;
+ }
+}
+
+class Chef {
+ constructor(name, restaurant) {
+  this.name = name;
+  this.restaurant = restaurant;
+ }
+
+ greetCustomer() {
+  console.log(`Hello, and welcome to ${this.restaurant}. My name is ${this.name}, and I'll be your server tonight.`);
+ }
+
+ checkForFood(foodItem) {
+  if (foodItem instanceof Dinner) {
+   console.log("Yes, we're serving that tonight!");
+  } else {
+   console.log("Sorry, we aren't serving that tonight.");
+  }
+ } 
+}
+
+console.log("Chefs Make Dinners");
+const chef1 = new Chef("Gordon Ramsay", "Restaurant Gordon Ramsay");
+chef1.greetCustomer();
+const dinner1 = new Dinner("Caesar Salad", "Steak", "Cheesecake");
+chef1.checkForFood(dinner1);
+const dinner2 = new Dinner("Caesar Salad", "Steak", "Cheesecake");
+chef1.checkForFood(dinner2);
+
+
